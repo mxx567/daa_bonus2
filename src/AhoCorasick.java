@@ -81,8 +81,6 @@ public class AhoCorasick {
             }
 
             state = state.next[ch - 'a'];
-
-            // Report the current word, then any shorter words ending here.
             for (Node match = state; match != null; match = match.output) {
                 if (match.word != null) {
                     int start = i - match.word.length() + 1;
